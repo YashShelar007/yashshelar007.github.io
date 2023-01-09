@@ -307,7 +307,7 @@ img {
 }
 
 .home__blob-img {
-  width: 170px;
+  width: 177px;
 }
 
 .home__data {
@@ -998,7 +998,7 @@ img {
     flex-direction: row;
     column-gap: 2rem;
   }
-  .footer__social {
+  .footer__socials {
     justify-self: flex-end;
   }
   .footer__copy {
