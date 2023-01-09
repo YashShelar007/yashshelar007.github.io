@@ -599,7 +599,7 @@
               </div>
             </div>
           </div>
-          <form action="" class="contant__form grid">
+          <form name="submit-to-google-sheet" action="" class="contant__form grid">
             <div class="contact__inputs grid">
               <div class="contact__content">
                 <label for="" class="contact__label">Name</label>
@@ -675,5 +675,16 @@
 
     <!--==================== MAIN JS ====================-->
     <script src="js/main.js"></script>
+    <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzJv5LiJXf-2sMDIFAK-STiXVWtdBXur8tXcPMHPw4GKOLrfJEcX3VYQuUd-PsScsPvgA/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
   </body>
 </html>
